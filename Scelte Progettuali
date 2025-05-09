@@ -1,2 +1,28 @@
 Hi guysss, scrivete qui le vostre idee in modo ordinato, scadenza: 13/05/2025 così poi ci vediamo in call per fare il punto della situazione e 
 vedere da che parte cominciare (ovviamente se finiamo prima, l'ultimo mandi un msg su family così ci mettiamo d'accordo anche prima di marted' per sentirci)
+
+BRILANT:
+Credo ci sia bisogno di molte sottoclassi anche piccole per poter gestire al meglio il tutto, in allegato c'è il mio UML che arriva fino a slide 13 del PDF,
+cioè la versione 1.
+Dipendentemente dal corpo dei dati che utilizzeremo ci sono diversi aspetti:
+-Una enum con i vari giorni della settimana
+-Una enum con i mesi se offriamo
+-Un controllo per vedere se l'inizioPeriodo e finePeriodo di un TipoVisita non siano inseriti erroneamente (si può filtrare tutto ciò nel corpo dati ancora prima di
+inserirlo nell'applicazione, ne parlermo insieme)
+-ho creato una classe CoordinateGeografiche da utilizzare sia in "Luogo" che in "TipoVisita", la prof. esprime esplicitamente la richiesta di essere precisi con 
+la posizione, altrimenti con indirizzo tra Via/Piazza/Viale e il numero civico è uno sbatti, posso comunque sostitutire.
+-la parte più complessa è inerente alla progettazione del mese successivo, adesso cercherò di scrivere uno schema in ordine temporale chiaro con i passi da seguire
+così da non dover riguardare le slide:
+    RIFACENDOMI A CHATGPT
+    Supponiamo di usare come campione il mese Marzo, se ci troviamo prima  del 15 Marzo allora :
+    -Il configuratore indica le date precluse (date dove non si può fare nessuna visita a prescindere)
+    -I volontari devono dare la disponiblità per il mese successivo(in questo caso dare disponibilità per il mese di  Aprile)
+    Ora siamo dopo il 16 Marzo ( o primo giorno feriale utile)
+    -Il configuratore deve genererare il piano delle visite di Aprile
+    -Si rendono visibili le visite proposte ed è possibile iscriveri per i fruitori
+    Siamo ad aprile: 
+    si ricorda che ciascuna visita ha le iscrizioni aperte fino a 3 giorni prima che debbano verificarsi, prima che si arrivi a tale data la visita assumerà 2 valori:
+    o sarà COMPLETA quindi se ha raggiunto la soglia massima delle iscrizioni oppure PROPOSTA se non si è alla soglia massima.
+    3 giorni prima della visita si effetuerà il controllo finale, ovvero sarà CONFERMATA se la soglia minima delle iscrizioni è stat raggiunga altrimenti sarà 
+    vista come CANCELLATA. Il giorno della visita essa avrà solo lo  status: EFFETUATA.
+    
