@@ -28,32 +28,42 @@ così da non dover riguardare le slide:
 
 
 ROXY
-Il programma si compone di 4 versioni; opterei per la presenza di 4 package diversi nei quali andare man mano ad espandere la versione precedente con le nuove aggiunte.
+Il programma si compone di 4 versioni; opterei per la presenza di 4 package diversi nei quali andare man mano ad espandere la versione
+precedente con le nuove aggiunte.
 Non mi sono concentrata su particolari attributi e metodi per ora 
 
 VERSIONE 1
 Classi che farei:
 -	Utente che venga poi estesa da Configuratore, Fruitore e Volontario con le opportune aggiunte
--	Configuratore: nella prima versione fa praticamente tutto lui  necessità di gestire il primo accesso, reimpostare credenziali e area territoriale di interesse (opterei regionale ma per me è uguale)
-Nb: l’accesso qui è consentito solo a lui, bisogna gestire nel menù l’eventuale errore nel caso in cui gli altri due utenti volessero autentificarsi. Utile anche una classe GestoreAutenticazione, che verrà utilizzata anche in seguito
--	Luogo: vista la necessità di nome, descrizione e altri aspetti, tra cui la collocazione geografica, per quest’ultima si potrebbero scegliere le coordinate al posto dell’utilizzo per la facilità di gestione (proposto da bri in uni)  classe Coordinate
--	Visita con relativi attributi e classi accessorie da definire in seguito, MA per lo stato della visita utilizzerei un ENUM, visto il modo in cui viene descritto nella consegna
+-	Configuratore: nella prima versione fa praticamente tutto lui  necessità di gestire il primo accesso, 
+reimpostare credenziali e area territoriale di interesse (opterei regionale ma per me è uguale)
+Nb: l’accesso qui è consentito solo a lui, bisogna gestire nel menù l’eventuale errore nel caso in cui gli altri 
+due utenti volessero autentificarsi. Utile anche una classe GestoreAutenticazione, che verrà utilizzata anche in seguito
+-	Luogo: vista la necessità di nome, descrizione e altri aspetti, tra cui la collocazione geografica, per quest’ultima si potrebbero 
+scegliere le coordinate al posto dell’utilizzo per la facilità di gestione (proposto da bri in uni)  classe Coordinate
+-	Visita con relativi attributi e classi accessorie da definire in seguito, MA per lo stato della visita utilizzerei un ENUM, 
+visto il modo in cui viene descritto nella consegna
 -	TipoVisita,  con le relative caratteristiche (titolo, descrizione, durata ecc)
 -	Probabilmente servono altre classi che emergeranno in seguito 
 
 VERSIONE 2
 Ripartendo dalla versione 1 mi concentro sulla classe Volontario, anche qui bisogna gestire primo accesso, nome utente e password.
-Bisogna gestire le sue disponibilità in base ai criteri precisi della consegna, utilizzare due classi che insieme possano gestire ciò, come CalendarioSistema, che si occupa dei confini dei giorni (prima di 15, da 16 in poi) e una classe Disponibilità per le fasce orarie (su questo non sono sicura).
+Bisogna gestire le sue disponibilità in base ai criteri precisi della consegna, utilizzare due classi che insieme possano gestire ciò,
+come CalendarioSistema, che si occupa dei confini dei giorni (prima di 15, da 16 in poi) e una classe Disponibilità per le fasce orarie (su questo non sono sicura).
 
 VERSIONE 3
-Il Configuratore entra nel pieno della pianificazione, quindi servono delle classi di gestione più dettagliate e una classe che tenga conto e sia aggiornata con il piano delle visite mensili. 
+Il Configuratore entra nel pieno della pianificazione, quindi servono delle classi di gestione più dettagliate e una classe che tenga conto e sia aggiornata 
+con il piano delle visite mensili. 
 Classi:
 -	GestoreSistema: lo userei in concomitanza con un enum StatoSistema che mi dice in che stato siamo, così da saper che operazioni dover svolgere.
-Per la gestione di tutti gli indici delle date della linea temporale si potrebbe avere una classe GestoreData che, dato un giorno in input, stabilisce se si può chiudere la raccolta delle disponibilità (giorno 16), se si può produrre il piano, se si può riaprire per il mese i+2 ecc.
+Per la gestione di tutti gli indici delle date della linea temporale si potrebbe avere una classe GestoreData che, dato un giorno in input, stabilisce 
+se si può chiudere la raccolta delle disponibilità (giorno 16), se si può produrre il piano, se si può riaprire per il mese i+2 ecc.
 -	PianoVisite: si occupa della prediposizione del piano per il mese i+1 (elenco delle visite pianificate)
 -	GestoreModifiche: si occupa dell’aggiunta dei vincoli e delle rimozioni con i conseguenti effetti collaterali descritti nella consegna
 
 VERSIONE 4 
-Viene introdotto il fruitore, dobbiamo occuparci della sua registrazione e autenticazione. Attenzione allo username del fruitore: non deve coincidere con lo username di altri fruitori, configuratori o volontari.
-Il fruitore può visualizzare le visite, effettuare iscrizioni a queste, visualizzare gli stati delle visite alle quali ha effettuato l’iscrizione o disdire.  classe Prenotazione e utilizzare l’enum StatoVisita della versione 1; potrebbe essere utile anche un enum StatoPrenotazione (effettuata, disdetta ecc)
+Viene introdotto il fruitore, dobbiamo occuparci della sua registrazione e autenticazione. Attenzione allo username del fruitore: non deve coincidere con lo username 
+di altri fruitori, configuratori o volontari.
+Il fruitore può visualizzare le visite, effettuare iscrizioni a queste, visualizzare gli stati delle visite alle quali ha effettuato l’iscrizione o disdire. 
+classe Prenotazione e utilizzare l’enum StatoVisita della versione 1; potrebbe essere utile anche un enum StatoPrenotazione (effettuata, disdetta ecc)
 
