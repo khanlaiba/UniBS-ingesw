@@ -67,3 +67,21 @@ di altri fruitori, configuratori o volontari.
 Il fruitore può visualizzare le visite, effettuare iscrizioni a queste, visualizzare gli stati delle visite alle quali ha effettuato l’iscrizione o disdire. 
 classe Prenotazione e utilizzare l’enum StatoVisita della versione 1; potrebbe essere utile anche un enum StatoPrenotazione (effettuata, disdetta ecc)
 
+
+
+
+LAIBA
+
+VERSIONE 1
+Implementazione di una classe Utente da cui derivare, per il momento, la classe Configuratore. 
+Configuratore avrà come attributo sicuramente l'oggetto Credenziali (-> classe Credenziali ha come attributi lo username e la password, e sarà suo compito:
+    - verificare se è il primo accesso, in tal caso creare metodo per set credenziali nuove, altrimenti verificare l'accesso. 
+    - Sarà sempre compito di questa classe verificare qual è il tipo di utente che sta facendo l'accesso.)
+
+Creazione Corpo Dati: essendo un compito esclusivamente del Configuratore, io direi di farlo all'interno della sua classe. 
+Di cosa si deve occupare questa parte? 
+1) controllo se primo accesso configuratore --> se sì, creazione file, se no skippo tutta questa parte (forse farei una classe apposita per la gestione del File,
+    cossichè sia tutto più ordinato)
+2) 
+
+
