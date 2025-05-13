@@ -86,8 +86,10 @@ Di cosa si deve occupare questa parte?
     cossichè sia tutto più ordinato)
 2) 
     - Classe Ambito Territoriale, credo conterrà solo una descrizione ma essendo stata esplicitamente richiesta bisogna crearla
+        ****** Classe Ambito Territoriale che contiene un ArrayList<Integer> CAP. Luogo conterrà indirizzo + CAP che andremo a controllare 
     - Classe Tipo Visita
     - Classe Luogo, che tra gli attributi avrà gli oggetti Ambito Territoriale e Tipo Visita    
+        **** 
     - Enum Stato Visita (propostta/completata/cancellata/effettuata)
     - Classe Visita, Luogo + Volontario + Stato
         + max persone per iscrizione
